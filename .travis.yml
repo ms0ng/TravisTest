@@ -1,0 +1,22 @@
+language: python
+python: 
+    - "3.6"	
+install:
+     - pip install pyinstaller
+before_script:
+    - git config --global user.name "ms0ng"
+    - git config --global user.email "me@ms0ng.com"
+script:
+    - git checkout Source
+    - pyinstaller --distpath ./ --onefile --clean builder.py
+    - git add ./builder
+    - git commit -m "commit"
+    - git push --force --quiet "https://${token}@${GH_REF}" HEAD:master
+    - ./builder
+branches:
+    only:
+        - Source
+    
+env:
+    global:
+        - GH_REF: github.com/ms0ng/TravisTest
