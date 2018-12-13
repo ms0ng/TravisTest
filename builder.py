@@ -1,9 +1,9 @@
 import os,sys
+
 def main():
-    #配置
-    cwd = sys.path[0]   #当前目录，不带\
-    surffix=""
-	nameList=walk4files(cwd,surffix)
+	cwd = sys.path[0]
+	nameList = []
+	nameList = walk4files(cwd,"")
 	print(nameList)
 
 def walk4files(dir,suffix = ""):
@@ -17,6 +17,7 @@ def walk4files(dir,suffix = ""):
             else:
                 continue
     return nameList
-	
+
+
 if __name__=="__main__":
-main()
+	main()
