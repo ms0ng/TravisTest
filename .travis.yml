@@ -1,19 +1,20 @@
 language: python
 python: 
     - "3.6"	
-install:
-     - pip install pyinstaller
+install: true
+#     - pip install pyinstaller
 before_script:
     - git config --global user.name "ms0ng"
     - git config --global user.email "me@ms0ng.com"
     - git checkout Source
 script:
-    - npm install -i -g carbon-now-cli
-    - pyinstaller --distpath ./ --onefile --clean builder.py
-    - git add ./builder
-    - git commit -m "commit"
-    - git push --force --quiet "https://${token}@${GH_REF}" HEAD:master
-    - ./builder
+#    - npm install -i -g carbon-now-cli
+#    - pyinstaller --distpath ./ --onefile --clean builder.py
+#    - git add ./builder
+#    - git commit -m "commit"
+#    - git push --force --quiet "https://${token}@${GH_REF}" HEAD:master
+#    - ./builder
+     - python ./builder.py
 branches:
     only:
         - Source
