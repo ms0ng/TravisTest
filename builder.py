@@ -2,9 +2,9 @@ import os,sys
 def main():
     #配置
     cwd = sys.path[0]   #当前目录，不带\
-    retry=5
-    surffix="c"
-	print(walk4files(cwd,""))
+    surffix=""
+	nameList=walk4files(cwd,surffix)
+	print(nameList)
 
 def walk4files(dir,suffix = ""):
     nameList=[] 
