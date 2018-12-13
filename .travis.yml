@@ -6,8 +6,9 @@ install:
 before_script:
     - git config --global user.name "ms0ng"
     - git config --global user.email "me@ms0ng.com"
-script:
     - git checkout Source
+script:
+    - npm install -i -g carbon-now-cli
     - pyinstaller --distpath ./ --onefile --clean builder.py
     - git add ./builder
     - git commit -m "commit"
