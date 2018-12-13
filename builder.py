@@ -2,6 +2,7 @@ import os,sys
 
 def main():
 	cwd = sys.path[0]
+	print(cwd)
 	nameList = []
 	nameList = walk4files(cwd,"")
 	print(nameList)
